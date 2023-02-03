@@ -14,8 +14,14 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&
 // Athens "lat": 37.9839412, "lon": 23.7283052,
 // paris "lat": 48.8588897, "lon": 2.3200410217200766,
 // Barcelona "lat": -5.9514918, "lon": 2.1774322,
-// 
 
+// added search button for city
+
+$("#search-button").on("click" , function(event) {
+    event.preventDefault();
+
+})
+var name  = $("#search-input").val().trim();
 
 // Ajax used to pull data
 $.ajax({
@@ -26,13 +32,19 @@ console.log(queryURL);
 console.log(response);
 
 // city
+console.log(response.name);
+// ------searchInfo.append($("#search-input"))// button.attr() ??  append as a button called london underneath the searches (check previous lessons)
 // date
+// moment().format('MMMM Do YYYY, h:mm:ss a') //needs fixing
+console.log(moment.js);
 // icon
+console.log(response.icon="04n"); //test to see if icon code is responsive in html
 // temp
 console.log(response.main.temp - 273.15); // convert Celcisus = 283.9 - 273.15
-
 // humidity
+console.log(response.main.humidity);
 // windspeed
+console.log(response.wind.speed);
 
 });
 
