@@ -8,6 +8,10 @@ lon = -0.1276474;
 // Query URL details
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" +APIKey;
 
+// set today as variable for moment
+var today = moment();
+$("#currentDay").text(today.format("D MMM YYYY"));
+
 // latitude and logitude locations: https://api.openweathermap.org/geo/1.0/direct?q=barcelona&limit=5&appid=f3aa59891896ea518aff933a0a0bdae6
 // London "lat": 51.5073219, "lon": -0.1276474,
 // New York "lat": 40.7127281, "lon": -74.0060152,
@@ -40,10 +44,10 @@ $("#search-input").html("<h1>" +response.name+ "weather details<h1/>");
 // ------searchInfo.append($("#search-input"))// button.attr() ??  append as a button called london underneath the searches (check previous lessons)
 // date
 // moment().format('MMMM Do YYYY, h:mm:ss a') //needs fixing
-console.log(moment.js);
+console.log(today);
 // icon
 console.log(response.weather[0].icon); // 04n ?test to see if icon code is responsive in html
-console.log(response.main.temp - 273.15); // convert Celcisus = 283.9 - 273.15
+console.log(response.main.temp - 273.15); // convert Celsius = temp - 273.15
 // humidity
 console.log(response.main.humidity);
 // windspeed
