@@ -31,15 +31,18 @@ method: "GET",
 console.log(queryURL);
 console.log(response);
 
-// city
+
+// city 
 console.log(response.name);
+// Now add code that will transfer to HTML
+$("#search-input").html("<h1>" +response.name+ "weather details<h1/>");
+
 // ------searchInfo.append($("#search-input"))// button.attr() ??  append as a button called london underneath the searches (check previous lessons)
 // date
 // moment().format('MMMM Do YYYY, h:mm:ss a') //needs fixing
 console.log(moment.js);
 // icon
-console.log(response.icon="04n"); //test to see if icon code is responsive in html
-// temp
+console.log(response.weather[0].icon); // 04n ?test to see if icon code is responsive in html
 console.log(response.main.temp - 273.15); // convert Celcisus = 283.9 - 273.15
 // humidity
 console.log(response.main.humidity);
