@@ -70,21 +70,26 @@ method: "GET",
 }).then(function(response) {
 console.log(queryURL);
 console.log(response);
+
+
+// Transfer content to HTML
+$(".city").html("<h1>" + response.name + " Weather Details</h1>");
+$(".date").text("today" + today); //-------------------------------check documentation needs fixing
+$(".icon").text("Wind Speed: " + response.weather[0].icon); //-----check documentation needs fixing
+$(".wind").text("Wind Speed: " + response.wind.speed);
+$(".temp").text("Wind Speed: " + response.main.temp);
+$(".humidity").text("Humidity: " + response.main.humidity);
+
+// Convert the temp to Celsius
+var tempC = response.main.temp - 273.15;
+
+// add temp content to html
+$(".temp").text("Temperature (K) " + response.main.temp);
+$(".tempC").text("Temperature (C) " + tempC.toFixed(2));
+
+// console log 
 // city 
 console.log(response.name);
-// Now add code that will transfer to HTML --------------needs fixing
-var tRow = $("<tr");
-// $("#search-input").html("<h1>" +name+ "weather details<h1/>")
-var nameTd =$("<td>").text(response.Name);
-var weatherTd =$("<td>").text(response.Weather[0].icon);
-var tempTd =$("<td>").text(response.Main.temp -273.15);
-
-tRow.append(nameTd, weatherTd, tempTd)
-
-$("tbody").append(tRow);
-
-
-// ------searchInfo.append($("#search-input"))// button.attr() ??  append as a button called london underneath the searches (check previous lessons)
 // date
 console.log(today);
 // icon
