@@ -62,6 +62,7 @@ $("#search-button").on("click" , function(event) {
 })
 var name  = $("#search-input").val().trim();
 
+
 // Ajax used to pull data
 $.ajax({
 url:queryURL,
@@ -69,16 +70,20 @@ method: "GET",
 }).then(function(response) {
 console.log(queryURL);
 console.log(response);
-
-
 // city 
 console.log(response.name);
-// Now add code that will transfer to HTML
-$("#search-input").html("<h1>" +response.name+ "weather details<h1/>"); //code needs adapting from bootcamp code to link to h2 value
+// Now add code that will transfer to HTML --------------needs fixing
+$("#search-input").html("<h1>" +name+ "weather details<h1/>")
+var name =$("<div>");
+name.addClass("well well lg row");
+var today =$("<h3>");
+today.addClass("today");
+
+// -------------------------------------------------------------------
+
 
 // ------searchInfo.append($("#search-input"))// button.attr() ??  append as a button called london underneath the searches (check previous lessons)
 // date
-// moment().format('MMMM Do YYYY, h:mm:ss a') //needs fixing
 console.log(today);
 // icon
 console.log(response.weather[0].icon); // 04n ?test to see if icon code is responsive in html
