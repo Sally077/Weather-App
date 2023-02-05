@@ -7,7 +7,7 @@ lon = -0.1276474;
 
 // add array for Cities
 
-cityArray = ["London", "Athens", "Barcelona", "New York", "Paris"];
+cities = ["London", "Athens", "Barcelona", "New York", "Paris"];
 
 // add method for City lat and lon
 
@@ -73,21 +73,21 @@ console.log(response);
 
 
 // Transfer content to HTML
-$(".city").html("<h1>" + response.name + " Weather Details</h1>");
+$(".city").html("<h2>" + response.name + " Weather Details</h2>");
 $(".date").text("today" + today); //-------------------------------check documentation needs fixing
-$(".icon").text("Wind Speed: " + response.weather[0].icon); //-----check documentation needs fixing
+$(".icon").text("Wind Icon: " + response.weather[0].icon); //-----check documentation needs fixing
 $(".wind").text("Wind Speed: " + response.wind.speed);
-$(".temp").text("Wind Speed: " + response.main.temp);
+$(".tempC").text("Temperature: " + response.main.temp);
 $(".humidity").text("Humidity: " + response.main.humidity);
 
 // Convert the temp to Celsius
 var tempC = response.main.temp - 273.15;
 
 // add temp content to html
-$(".temp").text("Temperature (K) " + response.main.temp);
-$(".tempC").text("Temperature (C) " + tempC.toFixed(2));
+// $(".temp").text("Temperature (K) " + response.main.temp);
+$(".tempC").text("Temperature (C) " + tempC.toFixed(2)); //fixed temp to two decimal places
 
-// console log 
+// console log the data as well as display on html page
 // city 
 console.log(response.name);
 // date
@@ -103,8 +103,60 @@ console.log(response.wind.speed);
 });
 
 
-// -------------------------------------------------------------------
+// render button to display weather data
+function renderButtons() {
+
+    $("#buttons-view").empty();
+
+    // loop through items in city array
+
+    for (var i = 0; i < cities.length; i++) {
+
+    // creates a button for each item in the array
+
+    var a = $("<button>");
+    
+    a.addClass("city");
+
+    a.attr("data-name", cities[i]);
+
+    a.text(cities[i]);
+
+    $("#buttons-view").append(a);
+
+
+}
+
+// This function handles events where one button is clicked
+$("#add-city").on("click", function(event) {
+    // event.preventDefault() prevents the form from trying to submit itself.
+    // We're using a form so that the user can hit enter instead of clicking the button if they want
+    event.preventDefault();
+  
+    // This line will grab the text from the input box
+    var city = $("#city-input").val().trim();
+    // The movie from the textbox is then added to our array
+    city.push(city);
+  
+    // calling renderButtons which handles the processing of our movie array
+    renderButtons();
+  });
+  
+  // Calling the renderButtons function at least once to display the initial list of movies
+  renderButtons();
+
+}
+
+// Ajax used to append city name data onto screen as a button when searched
 
 
 
 
+// $.ajax({
+//     url:queryURL,
+//     method: "GET",
+//     }).then(function(response) {
+//     console.log(queryURL);
+//     console.log(response);
+
+//     })
