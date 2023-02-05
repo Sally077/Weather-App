@@ -73,13 +73,15 @@ console.log(response);
 // city 
 console.log(response.name);
 // Now add code that will transfer to HTML --------------needs fixing
-$("#search-input").html("<h1>" +name+ "weather details<h1/>")
-var name =$("<div>");
-name.addClass("well well lg row");
-var today =$("<h3>");
-today.addClass("today");
+var tRow = $("<tr");
+// $("#search-input").html("<h1>" +name+ "weather details<h1/>")
+var nameTd =$("<td>").text(response.Name);
+var weatherTd =$("<td>").text(response.Weather[0].icon);
+var tempTd =$("<td>").text(response.Main.temp -273.15);
 
-// -------------------------------------------------------------------
+tRow.append(nameTd, weatherTd, tempTd)
+
+$("tbody").append(tRow);
 
 
 // ------searchInfo.append($("#search-input"))// button.attr() ??  append as a button called london underneath the searches (check previous lessons)
@@ -94,4 +96,10 @@ console.log(response.main.humidity);
 console.log(response.wind.speed);
 
 });
+
+
+// -------------------------------------------------------------------
+
+
+
 
