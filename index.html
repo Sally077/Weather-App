@@ -19,15 +19,16 @@
 
   <!-- max-width for ultra wide resolutions -->
   <div class="container-fluid" style="max-width: 1400px">
+    <div id="search-button"></div>
     <div class="row">
       <aside class="col-lg-3 pb-3">
         <h2 id="form-heading" class="mt-1 h3 form-label">
           Search for a City:
         </h2>
-        <form id="search-form" class="form">
+        <form id="city-form" class="form">
           <div class="form-inline form-group">
             <div class="input-group">
-              <input class="form-input weather-search" type="text" id="search-input" placeholder="London"
+              <input class="form-input weather-search" type="text" id="city-input" placeholder="London"
                 aria-labelledby="form-heading" aria-controls="today forecast" />
               <div class="input-group-append">
                 <button type="submit" class="btn search-button" id="search-button" aria-label="submit search">
@@ -40,18 +41,19 @@
           </div>
         </form>
 
-        <div class="container">
 
-        <div id="buttons-view"></div>
+    
 
-        <form id="city-form">
+        <!-- <form id="city-form">
           <label for="city-input">Add a City
     !</label>
-          <input type="text" id="city-input"><br>
-    
+          <input type="text" id="city-input"><br> -->
+          
           <!-- Button triggers new movie to be added -->
-          <input id="add-city" type="submit" value="Add
-    !">
+          <!-- <input id="add-city" type="submit" value="Add!">   -->
+          
+          <!-- Movies will Get Dumped Here -->
+    <div id="cities-view"></div>
 
         <div class="list-group" id="history"></div>
       </aside>
