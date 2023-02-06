@@ -1,109 +1,169 @@
-# Module 8 Server-Side APIs: Weather Dashboard
+# <weather Forecast App>
 
-## Your Task
+## Description
 
-Server APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+The weather app I was asked to design required using asyncoronised data to obtain the information from a third party website. In this task the requirements were as follows:
 
-Use the [5 Day Weather Forecast](https://openweathermap.org/forecast5) to retrieve weather data for cities. The link should take you to a guide on how to use the 5 Day Forecast API. You will need to register for an API key in order to use this API. After registering for a new API key, you may need to wait up to 2 hours for that API key to activate.
+We were asked produce a 5 day forecast using the open weather map url : https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 
-The base URL for your API calls should look like the following: `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`.
+User Story
+To produce a weather outlook for multiple cities to help plan a trip using the data from the app.
 
-**Hint**: Using the 5 Day Weather Forecast API, you'll notice that you will need to pass in coordinates instead of just a city name. Using the OpenWeatherMap APIs, how could we retrieve geographical coordinates given a city name?
+Task 1: The app needs to be able to show the following data to help plan a trip:
 
-You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
+City Name
+Current Date
+An icon representing different weather conditions
+The temperature of the city, humidity and windspeed.
+
+Task 2: The user would like to plan their trip accordingly so a five day forecast would help them to plan effectively for weather conditions.
+
+My five day forecast needs to display the following information:
+
+The date
+weather icons
+Temperature 
+Humidity
+
+Task 3: This needs to be interactive so that when the user clicks on a button and selects a city they are presented with future conditions for that city.
+
+
+Additional features: As well as functionality the UI needs to be polished and have local storage.
+
+
+
+
+Pseudocode
+add current date from moments.js
+Select and find apikey data from task 1
+
+create a button that will search for a city using the api key and return the weather data for the city
+
+Create a link from the button that will display a 5 day weather forecast for the selected city
+
+use JSON stringify to parse the data
+
+add set local storage
+add get local storage
+
+Make the website look good and functional
+
+
+
+Achievements
+
+I was able to request an api key for the open weather app and reseach information for 5 different cities to obtain The city, the temperature of the city, humidity and windspeed.
+
+I went to the last piece of code I created and checked out how I applied a date using the moment function.
+
+I managed to link the london data to the input form and append the city data for london to the html page.
+
+However after trying to get data buttons to appear when  a city was entered and a button was pressed this did not work effectively and stopped my original code from working as intended.
+
+I used ajax method GET to grab the data.
+
+Issues
+
+I struggled to find out how to create a code that would pull data for any city. At first I decided to set my data of cities in an array and try to link the data to a method this however was unsuccessful, 
+ but did find a weather app tutorial on you tube that showed a variable being set called newName that passed through a blank string in the code and then add the variable to the api url to pull any requested city. 
+
+ I have not been able to add the icon yet I need to work out how to display as an image.
+
+I have been struggling to store data to local storage.
+
+
+I managed to .
+
+Improvements
+
+If given more time I would 
+
+
+
  
-## User Story
+   
 
-```text
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
 
-## Acceptance Criteria
+## Table of Contents (Optional)
 
-* Create a weather dashboard with form inputs.
-  * When a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history
-  * When a user views the current weather conditions for that city they are presented with:
-    * The city name
-    * The date
-    * An icon representation of weather conditions
-    * The temperature
-    * The humidity
-    * The wind speed
-  * When a user view future weather conditions for that city they are presented with a 5-day forecast that displays:
-    * The date
-    * An icon representation of weather conditions
-    * The temperature
-    * The humidity
-  * When a user click on a city in the search history they are again presented with current and future conditions for that city
+If your README is long, add a table of contents to make it easy for users to find what they need.
 
-## Mock-Up
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-The following image shows the web application's appearance and functionality:
+## Installation
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for London.](./assets/10-server-side-apis-challenge-demo.png)
+My code does not currently need an install and can be viewed directly through the URL.
 
-## Grading Requirements
+## Usage
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+Provide instructions and examples for use. Include screenshots as needed.
 
-This Challenge is graded based on the following criteria:
+To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
 
-### Technical Acceptance Criteria: 40%
 
-* Satisfies all of the above acceptance criteria plus the following:
 
-  * Uses the OpenWeather API to retrieve weather data.
 
-  * Uses `localStorage` to store persistent data.
 
-### Deployment: 32%
+## Credits
 
-* Application deployed at live URL.
+There were no collaborators in this task.
 
-* Application loads with no errors.
+I did very little research online and stuck mainly to the bootcamp tutorials and previous student tasks as I felt that they had most of the knowledge I needed. I often find that looking through youtube videos leave me overwhelmed and although they give a good insight and are good to watch they can confuse me and take me off track. 
 
-* Application GitHub URL submitted.
+I am trying hard to look at the code that I have worked with in the past to help build my knowledge of JavaScript as this is an area that I struggle with most.
 
-* GitHub repository that contains application code.
+All videos were found in the bootcamp that I watched on zoom for week 8.
 
-### Application Quality: 15%
+I went onto the following websites:
 
-* Application user experience is intuitive and easy to navigate.
 
-* Application user interface style is clean and polished.
+I watched this website by Ranjan for inspiration on how to create a 5 day forecast that pulls in data for any city.
 
-* Application resembles the mock-up functionality provided in the homework instructions.
+https://www.google.com/search?q=how+to+create+a+5+day+weather+forecast+using+open+weather+map&rlz=1C1SQJL_enGB1032GB1032&sxsrf=AJOqlzUntv5FVVqC1EJX0DbMZHItfPL9Gg:1675623592084&source=lnms&tbm=vid&sa=X&ved=2ahUKEwjw4e6niP_8AhXAQUEAHfUmC7kQ_AUoAnoECAEQBA&biw=1920&bih=961&dpr=1#fpstate=ive&vld=cid:523d318c,vid:QEu8_5bYm-w
 
-### Repository Quality: 13%
 
-* Repository has a unique name.
+For 5 day forecast data
+https://openweathermap.org/forecast5#5days
 
-* Repository follows best practices for file structure and naming conventions.
+For London Data
+https://openweathermap.org/api/geocoding-api
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+To help me work out how to apply jquery to my code
+https://api.jquery.com/jQuery.ajax/#jQuery-ajax-settings-settings
 
-* Repository contains multiple descriptive commit messages.
 
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
 
-## Review
 
-You are required to submit BOTH of the following for review:
 
-* The URL of the functional, deployed application.
 
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
 
+## License
+
+I have chosen a MIT license for this project
 ---
 
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Badges
+
+I  have 2 git hub badge acheivements pullshark x2 and YOLO
+
+## Features
+
+No additional features added as main focus was working on a solution
+
+## How to Contribute
+
+N/A
+
+## Tests
+
+I used console.log(response) to check that the data was working for the city, windspeed, icons, humidity and temperature.
+
+I have also ran through the moment code and refreshed to check that the date is working correctly.
+
+I have checked the data in the consolelog and in the network area on the dev tools.
+
+
+
