@@ -62,6 +62,8 @@ However after trying to get data buttons to appear when  a city was entered and 
 
 I used ajax method GET to grab the data.
 
+I was able to find out the latitude and logitude for five cities using the query handler.
+
 Issues
 
 I struggled to find out how to create a code that would pull data for any city. At first I decided to set my data of cities in an array and try to link the data to a method this however was unsuccessful, 
@@ -72,11 +74,14 @@ I struggled to find out how to create a code that would pull data for any city. 
 I have been struggling to store data to local storage.
 
 
-I managed to .
 
 Improvements
 
-If given more time I would 
+If given more time I would spend more time appending a five day weather forecast, tidy up the UI so it looks aesthetically pleasing. Add bootstrap card holders for the five day forecast. Look up and test local storage.
+
+I did have issues with my css and was unable to resolve this despite making several searches for MIME errors and changing the link in the HTML stylesheet.
+
+I would have fixed and changed the icon and set it to an image to display the weather condition icon.
 
 
 

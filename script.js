@@ -9,36 +9,7 @@ lon = -0.1276474;
 
 cities = ["London", "Athens", "Barcelona", "New York", "Paris"];
 
-// add method for City lat and lon
 
-// const coordinates = {
-
-//     city: "London",
-//     lat: 51.5073219,
-//     lon: -0.1276474,
-
-//     city: "Athens",
-//     lat: 37.9839412,
-//     lon: 23.7283052,
-
-//     city: "Barcelona",
-//     lat: -5.9514918,
-//     lon: 2.1774322,
-
-//     city: "New York",
-//     lat: 40.7127281,
-//     lon: -74.0060152,
-
-//     city: "Paris",
-//     lat: 448.8588897,
-//     lon: 2.3200410217200766,
-
-//     city: "London",
-//     lat: 51.5073219,
-//     lon: -0.1276474,
-// };
-// // testing to see if a specific city can be selected
-// console.log(coordinates.city);
 
 // function displayCitiesInfo() {
 
@@ -55,6 +26,25 @@ var today = moment();
 // Athens "lat": 37.9839412, "lon": 23.7283052,
 // paris "lat": 48.8588897, "lon": 2.3200410217200766,
 // Barcelona "lat": -5.9514918, "lon": 2.1774322,
+
+
+// Query for 5 day forecast
+
+
+
+// function to get data from 5 day API
+
+function searchButton() {
+  const newName = document.getElementById(cityInput);
+  const location = document.getElementById(location);
+  location.innerHTML = " "+newName.val+" "
+
+  fetch("https://api.openweathermap.org/data/2.5/forecast?q=+newName.val+&appid=" +APIKey)
+
+  // -------------------------incomplete data need to complete to add 5 day forecast to bootstrap cards
+}
+
+
 
 // added search button for city
 
@@ -149,3 +139,11 @@ $("#search-button").on("click", function(event) {
 //   $(document).on("click", ".city", displayCityInfo);
   // Calling the renderButtons function at least once to display the initial list of movies
   renderButtons();
+
+// save data to local storage
+for(var i = 0; i < cities.length; i++){
+localStorage.setItem("#cities-view");
+localStorage.getItem("#cities-view");
+console.log(note);
+
+}
